@@ -27,9 +27,8 @@
 
 <section>
     <h2>Zdjęcie</h2>
-    <img id="zdjecie" width="100"
-        src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg"
-        onclick="zmienZdjecie()">
+    <img id="zdjecie" width="200"
+        src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg">
 </section>
 
 <footer>
@@ -37,21 +36,22 @@
 </footer>
 
 <script>
-let zdjecia = [
-    "https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/8/8f/Einstein_1921_portrait2.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/a/a0/Einstein_patentoffice.jpg"
-];
+window.onload = function() {
+    let zdjecia = [
+        "https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/8/8f/Einstein_1921_portrait2.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/a/a0/Einstein_patentoffice.jpg"
+    ];
 
-let index = 0;
+    let index = 0;
+    let img = document.getElementById("zdjecie");
 
-function zmienZdjecie() {
-    index++;
-    if (index >= zdjecia.length) {
-        index = 0;
-    }
-    document.getElementById("zdjecie").src = zdjecia[index];
-}
+    img.addEventListener("click", function() {
+        index++;
+        if (index >= zdjecia.length) index = 0;
+        img.src = zdjecia[index];
+    });
+};
 </script>
 
 </body>
